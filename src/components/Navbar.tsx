@@ -8,7 +8,7 @@ const Navbar = () => {
 const navListItems = [{id:1,title:'Home'},{id:2,title:'TV Shows'},{id:3,title:'Movies'},{id:4,title:'News & Popular'},{id:5,title:'My List'},{id:6,title:'Browse by Language'}]
 
   return (
-    <div className='text-slate-300 flex justify-around fixed w-full pt-3'>
+    <div className='bg-transparent text-slate-300 flex justify-around  w-full pt-3 absolute z-20 top-0'>
         <div className='flex gap-7 items-center'>
              {/* netflix logo */}
               <div>
@@ -16,14 +16,13 @@ const navListItems = [{id:1,title:'Home'},{id:2,title:'TV Shows'},{id:3,title:'M
              </div>
 
               {/* navbar items list */}
-              <div>
+              <div className=' hidden md:block text-sm '>
                 <ul className='flex gap-4'>
-                   <li>Home</li>
-                   <li>TV shows</li>
-                   <li>Movies</li>
-                   <li>News&Popular</li>
-                   <li>My List</li>
-                   <li>Browse by languages</li>
+                    {
+                      navListItems.map((item)=>(
+                          <li key={item.id}>{item.title}</li>
+                      ))
+                    }                  
                 </ul>
               </div>
         </div>
@@ -39,8 +38,6 @@ const navListItems = [{id:1,title:'Home'},{id:2,title:'TV Shows'},{id:3,title:'M
                <IoMdArrowDropdown className='text-3xl'/>
             </div>
            
-
-
         </div>
 
     </div>

@@ -7,6 +7,7 @@ const App = () => {
     <div className="App">
        {/* <ManageProfile/> */}
         <MainPage/>
+        
     </div>
   )
 }
