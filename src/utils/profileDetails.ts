@@ -1,9 +1,9 @@
-import profileImage1 from '../assets/svgs/profileImage1.png'
-import profileImage2 from '../assets/svgs/profileImage2.png'
-import profileImage3 from '../assets/svgs/profileImage3.png'
-import profileImage4 from '../assets/svgs/profileImage4.png'
-import profileImage5 from '../assets/svgs/profileImage5.png'
-import profileImage6 from '../assets/svgs/profileImage6.png'
+import profileImage1 from '../assets/images/profileImage1.png'
+import profileImage2 from '../assets/images/profileImage2.png'
+import profileImage3 from '../assets/images/profileImage3.png'
+import profileImage4 from '../assets/images/profileImage4.png'
+import profileImage5 from '../assets/images/profileImage5.png'
+import profileImage6 from '../assets/images/profileImage6.png'
 
 //Type definition for profile objects using interface
 
