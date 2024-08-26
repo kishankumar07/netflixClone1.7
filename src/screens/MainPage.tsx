@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar"
 
 const MainPage = () => {
   return (
-    <div className="bg-zinc-900 h-dvh ">
+    <div className="bg-zinc-900 min-h-screen ">
             <Navbar/>
             <Hero/>
             <MiddleSection/>

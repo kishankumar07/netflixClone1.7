@@ -14,13 +14,13 @@ import { useEffect, useState } from 'react'
 
 const Navbar = () => {
 
-    const [profile,setProfile] = useState < Profile | string > (profileImage1);
+    const [profile,setProfile] = useState <Profile|string> (profileImage1);
 
     useEffect(()=>{
         const getLocalStorageItem =()=>{
            const localItem = localStorage.getItem('selectedProfile');
            console.log('when useEffect first runs:')
-           console.log(localItem) 
+          //  console.log(localItem) 
           setProfile(localItem ? JSON.parse(localItem): profileImage1 );
         }  
         getLocalStorageItem() 
