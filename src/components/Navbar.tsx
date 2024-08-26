@@ -3,6 +3,7 @@ import { FaSearch,FaBell } from 'react-icons/fa'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import profileImage1 from '../assets/images/profileImage1.png'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
   //Defining an expected shape of profile variable, can be string or object
 
@@ -14,7 +15,9 @@ import { useEffect, useState } from 'react'
 
 const Navbar = () => {
 
-    const [profile,setProfile] = useState <Profile|string> (profileImage1);
+    const [profile,setProfile] = useState <Profile|string> 
+    (profileImage1);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         const getLocalStorageItem =()=>{
@@ -25,6 +28,12 @@ const Navbar = () => {
         }  
         getLocalStorageItem() 
     },[]) 
+
+
+    // When pressed on the avatar on Main page will navigates to the profiles page
+    const handleClickToProfile = ()=>{
+        navigate('/profiles')
+    }
 
     // conditional rendering based on whether data obtained from localStorage
     const navImageProfile = typeof profile === 'string' ? profileImage1 : profile.asset
@@ -59,7 +68,7 @@ const navListItems = [{id:1,title:'Home'},{id:2,title:'TV Shows'},{id:3,title:'M
             <p className='text-sm lg:text-xl'>Children</p>
             <FaBell className='text-sm lg:text-xl'/>
             <div className='flex items-center'>
-            <img src={navImageProfile} alt="" className='size-8 rounded-lg lg:size-10'/>
+            <img onClick={()=>{handleClickToProfile()}} src={navImageProfile} alt="" className='size-8 rounded-lg lg:size-10 cursor-pointer'/>
               
                <IoMdArrowDropdown className='text-2xl'/>
             </div>

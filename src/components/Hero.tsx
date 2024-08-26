@@ -82,7 +82,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="relative  w-full h-[400px] md:h-[900px] ">
+      <div className="relative overflow-x-hidden h-[400px] md:h-[900px] ">
         {/* cover image */}
 
         <img
@@ -120,7 +120,7 @@ const Hero = () => {
         </div>
 
         {/* Hero's card */}
-        <div className="absolute bottom-5 ml-5 hidden md:block">
+        <div className=" absolute bottom-5 ml-5 hidden md:block w-full  border-5">
           <HeroCards movies={popMoviesList} imageUrl={imageBaseUrl} isHeroSection={true}/>
         </div>
       </div>
