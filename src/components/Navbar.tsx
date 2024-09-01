@@ -2,7 +2,7 @@ import netflixLogo from '../assets/images/netflix-logo.png'
 import { FaSearch,FaBell,FaPowerOff } from 'react-icons/fa'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import profileImage1 from '../assets/images/profileImage1.png'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../firebase'
 import { AuthContext } from '../store/firebaseContext'
@@ -18,6 +18,9 @@ import { VscAccount } from "react-icons/vsc";
 
 const Navbar = () => {
     const authContext = useContext(AuthContext);
+    const navRef = useRef<HTMLDivElement>(null);
+
+
     if(!authContext){
       throw new Error('provide a value')
     }
@@ -34,6 +37,19 @@ const Navbar = () => {
           setProfile(localItem ? JSON.parse(localItem): profileImage1 );
         }  
         getLocalStorageItem() 
+
+        window.addEventListener('scroll', () => {
+          if (navRef.current) {
+              if (window.scrollY >= 80) {
+                  navRef.current.classList.add('nav-dark');
+              } else {
+                  navRef.current.classList.remove('nav-dark');
+              }
+          }
+      });
+      
+
+
     },[]) 
 
 
@@ -55,7 +71,7 @@ const Navbar = () => {
 const navListItems = [{id:1,title:'Home'},{id:2,title:'TV Shows'},{id:3,title:'Movies'},{id:4,title:'News & Popular'},{id:5,title:'My List'},{id:6,title:'Browse by Language'}]
 
   return (
-    <div className='bg-transparent text-slate-300 flex justify-around  w-full pt-6 absolute z-20 top-0'>
+    <div ref={navRef} className='navbar bg-transparent text-slate-300 flex justify-around  w-full pt-6 absolute '>
         <div className='flex gap-7 items-center'>
              {/* netflix logo */}
               <div>
