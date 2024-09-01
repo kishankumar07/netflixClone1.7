@@ -111,7 +111,7 @@ const Hero = () => {
               <FaPlay className="text-xs md:text-sm lg:text-lg" /> Play
             </button>
 
-            <button className="flex items-center gap-1 px-4 py-2 rounded bg-gray-600 text-zinc-300 font-bold hover:bg-gray-500 hover:text-zinc-100 text-xs md:text-sm lg:text-lg">
+            <button className="flex items-center gap-1 px-4 py-2 rounded bg-gray-600 text-zinc-300 font-bold hover:bg-gray-700 hover:text-zinc-100 text-xs md:text-sm lg:text-lg">
               {" "}
               <FaCircleInfo className="text-inherit" />
               More Info
