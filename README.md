@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Netflix Clone
 
-Currently, two official plugins are available:
+This project is a Netflix clone built using React and TypeScript. It replicates some of the core features of Netflix, including user authentication, video streaming, and a responsive UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- User Authentication: Secure login and sign-up functionality using Firebase.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Responsive Design: Optimized for various devices, including desktops, tablets, and smartphones.
+- Video Streaming: Play and pause videos with a user-friendly interface.
+- Routing: Seamless navigation between pages using React Router.
+- State Management: Managed using React's built-in hooks and Context API.
+
+
+## Technologies Used
+
+- React: JavaScript library for building user interfaces.
+
+- TypeScript: Superset of JavaScript that adds static typing.
+- Firebase: Backend service for authentication and database.
+- React Router: Library for handling routing in React applications.
+- Tailwind CSS : utility-first CSS framework for rapidly building modern websites without ever leaving your HTML.
+
+
+
+## Installation
+
+1) Clone the repository:
+
+```bash
+ git clone https://github.com/yourusername/netflix-clone.git
+cd netflix-clone
+
 ```
+2) Install dependencies :
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+```bash
+ npm install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+3) Install Firebase :
+- Create a Firebase project.
+- Copy your Firebase config and replace it in `src/firebase/config.ts`    
+
+4) Start the developement server : 
+
+```bash
+ npm run dev
+
+```
+The app should be running on `httP://localhost:8989`
+## Usage
+ - Sign Up: Create a new account to start using the app.
+ - Login: Log in with your credentials.
+ - Browse Movies : Navigate through different movie categories.
+ - Watch Trailers: Click on a movie to watch its trailer.
+
+ ## Contributing
+ - If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+
+ 
+
+
+
+## License
+
+This project is open-source and available under the [MIT License](https://choosealicense.com/licenses/mit/).
+
