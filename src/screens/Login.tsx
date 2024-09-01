@@ -12,7 +12,7 @@ const Login = () => {
   const [password,setPassword] = useState('');
   const [loading,setLoading] = useState(false)
 
-  const handleSubmit = async(e:React.FormEvent<HTMLFormElement>)=>{
+  const handleSubmit = async(e:React.MouseEvent<HTMLButtonElement>)=>{
       e.preventDefault();
       setLoading(true);
       if(signinState === 'Sign In'){
@@ -61,8 +61,8 @@ const Login = () => {
           <div>
             <form>
                  {/* Conditional check for sign in / sign up state */}
-            {signinState === 'Sign Up' ? 
-             <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text" placeholder="Your name" className="login-fields" /> : <></>}
+            {signinState === 'Sign Up' && 
+             <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text" placeholder="Your name" className="login-fields" />}
            
 
             <input value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" className="login-fields" placeholder="Email" />

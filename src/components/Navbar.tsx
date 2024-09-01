@@ -17,7 +17,11 @@ import { VscAccount } from "react-icons/vsc";
 
 
 const Navbar = () => {
-    const {user,setUser} = useContext(AuthContext)
+    const authContext = useContext(AuthContext);
+    if(!authContext){
+      throw new Error('provide a value')
+    }
+    const {setUser} = authContext;
     const [profile,setProfile] = useState <Profile|string> 
     (profileImage1);
     const navigate = useNavigate();
@@ -40,7 +44,7 @@ const Navbar = () => {
 
     const handleLogoutClick = async()=>{
         await logout();
-        setUser(null);
+        if(setUser) setUser(null)
         navigate('/login')
     }
 

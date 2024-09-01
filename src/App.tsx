@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import ManageProfile from "./screens/ManageProfile"
 import MainPage from "./screens/MainPage"
 import VideoPlayer from "./screens/VideoPlayer"
@@ -13,15 +13,19 @@ import { AuthContext } from "./store/firebaseContext"
 
 
 const App = () => {
-  const navigate = useNavigate();
-  const {user,setUser} = useContext(AuthContext)
+  
+  const authContext = useContext(AuthContext)
+  if(!authContext){
+    throw new  Error('Provide a value to Authcontext');
+  }
+  const {user,setUser} = authContext;
    const [loading,setLoading]= useState(true);
    
   useEffect(()=>{
     onAuthStateChanged(auth,(user)=>{
       if(user) setUser(user)
         setLoading(false);
-        // console.log('this is the user at App.tsx:',user)
+        console.log('this is the user at App.tsx:',user)
     })
   },[])
 
